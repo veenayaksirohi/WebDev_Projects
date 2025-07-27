@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs Website</title>
+    <style>
+        /* Reset default browser styles and set box-sizing */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Typography and base styles */
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 1rem;
+            color: #222;
+            background: #fffafa;
+        }
+
+        /* Main container styling */
+        .container {
+            background-color: #fffafa;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Header section styling */
+        .header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 10px;
+        }
+        .header h1 {
+            color: darkblue;
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .header p {
+            margin: 10px;
+        }
+
+        /* Content grid styling */
+        .content {
+            width: 80vw;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 10px;
+        }
+
+        /* Card styles */
+        .cards {
+            background-color: #f8f9fa; /* Light grey, Bootstrap style */
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        .cards:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.30);
+            transform: translateY(-4px) scale(1.02);
+        }
+        .cards h3 {
+            color: darkblue;
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+        .cards span {
+            align-self: flex-start;
+            margin-left: 10px;
+            margin-bottom: 10px;
+            border: 2px solid lightblue;
+            border-radius: 15px;
+            text-align: center;
+            padding: 3px 10px;
+            font-size: 0.95rem;
+            background: #eaf6fb;
+        }
+        .cards p {
+            color: #333;
+            font-size: 1rem;
+            margin: 5px 0;
+            text-align: justify;
+        }
+
+        /* Card image styling */
+        .cards > img {
+            width: 250px;
+            height: 200px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+            border-radius: 8px;
+            object-fit: cover;
+        }
+
+        /* Author bar styling */
+        .auther {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            margin-top: auto;
+            color: #555;
+            font-size: 0.9rem;
+            align-self: flex-start;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1),
+                        inset 0 0 10px rgba(0,0,0,0.1);
+            padding: .5rem 1rem;
+            border-radius: 50px;
+            background: #f3f6f8;
+            gap: 0.5rem;
+        }
+        .auther img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        /* Responsive design */
+        @media (max-width: 900px) {
+            .content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .cards > img {
+                width: 100%;
+                height: auto;
+            }
+        }
+        @media (max-width: 600px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            .cards {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <h1>Blogs Website</h1>
+            <p>Utilize the power of blogging to share your thoughts!</p>
+        </div>
+        <!-- Content Grid Section -->
+        <div class="content">
+            <!-- Blog Card 1 -->
+            <div class="cards">
+                <img src="https://plus.unsplash.com/premium_photo-1682125773446-259ce64f9dd7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZWR1Y2F0aW9ufGVufDB8fDB8fHww" alt="">
+                <h3>The Future of Education</h3>
+                <span>Education</span>
+                <p>In today’s rapidly changing world, innovative learning methods are reshaping classrooms everywhere. From interactive online platforms to AI‑driven tutoring, students gain more personalized support than ever before. Education isn’t just about memorizing facts—it’s about inspiring curiosity and lifelong growth.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt=""> Aisha Verma</div>
+            </div>
+            <!-- Blog Card 2 -->
+            <div class="cards">
+                <img src="https://plus.unsplash.com/premium_photo-1661432575489-b0400f4fea58?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8c2NpZW5jZXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                <h3>Unlocking Nature’s Secrets: Advances in Science</h3>
+                <span> Science</span>
+                <p>Cutting‑edge experiments make it possible to study everything from the tiniest cell structures to vast cosmic phenomena. Scientists are collaborating across borders, using new tools to explore questions once thought beyond reach. Every breakthrough brings us closer to understanding the intricate web of life and matter.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Rahul Singh</div>
+            </div>
+            <!-- Blog Card 3 -->
+            <div class="cards">
+                <img src="https://plus.unsplash.com/premium_photo-1683121710572-7723bd2e235d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8YWl8ZW58MHx8MHx8fDA%3D" alt="">
+                <h3>AI in Everyday Life</h3>
+                <span>Artificial Intelligence</span>
+                <p>Artificial intelligence is no longer science fiction—it’s woven into our daily routines, from voice assistants to smart home devices. As AI models learn to think more like humans, ethical design and transparency become critical. The challenge now is to harness AI’s power responsibly for the benefit of all.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Kavita Patel</div>
+            </div>
+            <!-- Blog Card 4 -->
+            <div class="cards">
+                <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y29tcHV0ZXJ8ZW58MHx8MHx8fDA%3D" alt="">
+                <h3>Inside the Machine: The Rise of Modern Computing</h3>
+                <span>Computer Science</span>
+                <p>With processors getting faster and algorithms more efficient, modern computers can handle tasks that once required entire data centers. Innovations like quantum computing and edge devices promise to revolutionize everything from cryptography to real‑time analytics. Understanding these trends is key to staying ahead in tech.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Arjun Mehra</div>
+            </div>
+            <!-- Blog Card 5 -->
+            <div class="cards">
+                <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dGVjaG5vbG9neXxlbnwwfHwwfHx8MA%3D%3D" alt="">
+                <h3>Building the Connected World: Tech Trends 2025</h3>
+                <span>Technology</span>
+                <p>From 5G networks to immersive AR/VR experiences, the technology landscape is evolving at breakneck speed. Startups and established players alike are racing to deliver seamless connectivity and richer digital interactions. Keeping pace with these trends is essential for businesses aiming to innovate.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Neha Rao</div>
+            </div>
+            <!-- Blog Card 6 -->
+            <div class="cards">
+                <img src="https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fHRlY2hub2xvZ3l8ZW58MHx8MHx8fDA%3D" alt="">
+                <h3>Software Development Today</h3>
+                <span>Software Engineering</span>
+                <p>Modern software projects blend art and engineering, using frameworks that let developers build powerful applications in days instead of months. Collaboration tools, continuous integration, and containerization have transformed how teams work. The end result? Faster delivery of reliable, user‑friendly products.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Vikram Joshi</div>
+            </div>
+            <!-- Blog Card 7 -->
+            <div class="cards">
+                <img src="https://images.unsplash.com/photo-1620891549027-942fdc95d3f5?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8dGVzbGF8ZW58MHx8MHx8fDA%3D" alt="">
+                <h3>The Tesla Effect</h3>
+                <span>Automotive / EV</span>
+                <p>Tesla’s electric vehicles have redefined performance, safety, and sustainability on the road. With over‑the‑air updates and an expanding Supercharger network, EV ownership is more convenient than ever. As battery tech improves, electric cars are set to become the new normal worldwide.</p>
+                <div class="auther"><img src="https://cdn-icons-png.flaticon.com/128/64/64572.png" alt="">Sneha Gupta</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+

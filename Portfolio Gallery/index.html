@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Gallery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .continer{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100vw;
+            height: 100%;
+        }
+        .heading{
+            background-color: green;
+            color: white;
+            text-align: center;
+            margin-top: 10px;
+            padding: 10px;
+            width: 100vw;
+            box-shadow: 0 4px 2px -2px gray;
+            margin-bottom: 5px;
+        }
+        .content{
+            width: 80vw;
+        }
+        .subhead{
+            box-shadow: 4px 4px 2px -2px gray,
+                        -4px -4px 2px -2px gray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 10px;
+        }
+        
+        .portfolio{
+            box-shadow: 4px 4px 4px -2px gray,
+                        -4px -4px 4px -2px gray;
+            margin-top: 5px;
+            margin-bottom: 5px;
+            padding: 10px;
+        }
+        img{
+            width: 200px;
+            height: 100px;
+        }
+        .cards{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .card{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 4px 4px 4px 4px gray,
+                        -4px -4px 4px 4px gray;
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            transition-property: all;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+        .card:hover{
+            transform: scale(1.05);
+            box-shadow: 6px 6px 6px 6px gray,
+                        -6px -6px 6px 6px gray;
+        }
+        .card h3{
+            text-align: center;
+            margin: 10px 0;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="continer">
+        <div class="heading">
+            <h1>VeenayakSirohi</h1>
+        </div>
+        <div class="content">
+            <div class="subhead">
+                <h2>A Computer Science Portal For Veenayak </h2>
+            </div>
+            <hr>
+            <div class="portfolio">
+                <h2>Portfolio</h2>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <img src=
+"https://www.geeksforgeeks.org/wp-content/uploads/html.png" 
+                         alt="">
+                    <h3>
+                        <a href="#">HTML Tutorials</a>
+                    </h3>
+                    <p>
+                        HTML stands for Hyper Text Markup
+                        Language. It is used to design web
+                        pages using markup language. HTML
+                        is the combination of Hypertext and
+                        Markup language. Hypertext defines
+                        the link between the web pages.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS Logo">
+                    <h3>
+                        <a href="#">CSS Tutorials</a>
+                    </h3>
+                    <p>
+                        CSS stands for Cascading Style Sheets.
+                        It is used to style the web pages
+                        using different styles like colors,
+                        fonts, spacing, etc. CSS is a style
+                        sheet language that describes the
+                        presentation of a document written in
+                        HTML or XML.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://www.geeksforgeeks.org/wp-content/uploads/js.png" 
+                         alt="">
+                    <h3>
+                        <a href="#">JavaScript Tutorials</a>
+                    </h3>
+                    <p>
+                        JavaScript is a lightweight, interpreted,
+                        or just-in-time compiled programming
+                        language with first-class functions.
+                        It has become a standard for creating
+                        interactive web pages and is an essential
+                        part of web applications.
+                    </p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python Logo">
+                    <h3>
+                        <a href="#">Python Tutorials</a>
+                    </h3>
+                    <p>
+                        Python is a high-level, interpreted,
+                        and general-purpose programming language.
+                        It is known for its readability and
+                        simplicity, making it a popular choice
+                        for beginners and experienced developers alike.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lorem Ipsum Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Main stylesheet linked -->
+</head>
+<body>
+    <div class="container">
+        <div class="generator">
+            <!-- Paragraphs Range Input -->
+            <div class="para">
+                <label for="paragraphs">Paragraphs</label>
+                <input type="range" id="paragraphs" name="paragraphs" min="1" max="10">
+                <span id="paragraphs-value">1</span>
+            </div>
+            <!-- Words Per Paragraph Range Input -->
+            <div class="words">
+                <label for="words-per-paragraph">Words Per Paragraph</label>
+                <input type="range" id="words-per-paragraph" name="words-per-paragraph" min="1" max="100">
+                <span id="words-value">1</span>
+            </div>
+            <!-- Tag Selection -->
+            <div class="tag">
+                <label for="tag-input">Tag</label>
+                <input list="tags" id="tag-input" name="tag" placeholder="choose a tag">
+                <datalist id="tags">
+                  <option value="p">
+                  <option value="h1">
+                  <option value="h2">
+                  <option value="h3">
+                  <option value="h4">
+                  <option value="h5">
+                  <option value="h6">
+                  <option value="div">
+                  <option value="span">
+                </datalist>
+            </div>
+            <!-- Generate Button -->
+            <button type="submit">Generate Lorem Ipsum</button>
+            <!-- Output Area -->
+            <div class="output">
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>

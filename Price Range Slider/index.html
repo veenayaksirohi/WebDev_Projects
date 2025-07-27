@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Range Slider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: #fff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+        }
+        .box {
+            width: 50vw;
+            height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+            border-radius: 10px;
+            box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1),
+                        -4px 4px 10px rgba(0, 0, 0, 0.1),
+                        4px -4px 10px rgba(0, 0, 0, 0.1),
+                        -4px -4px 10px rgba(0, 0, 0, 0.1);
+            color: green;
+        }
+        .box h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .box h3 {
+            display: flex;
+            gap: 10px;
+            margin: 1rem;
+            align-items: center;
+            justify-content: center;
+        }
+        .output {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 30px;
+            background-color: white;
+            border-radius: 7px;
+            box-shadow: inset 2px 2px 10px rgba(0, 0, 0, 0.1),
+                        inset -2px 2px 10px rgba(0, 0, 0, 0.1),
+                        inset 2px -2px 10px rgba(0, 0, 0, 0.1),
+                        inset -2px -2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .slider {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            margin: 10px;
+        }
+        input[type="range"] {
+            position: absolute;
+            width: 100%;
+            background: transparent;
+            pointer-events: none;
+            top: 0;
+        }
+        input[type="range"]::-webkit-slider-thumb { pointer-events: all; }
+        input[type="range"]::-moz-range-thumb { pointer-events: all; }
+        input[type="range"]::-webkit-slider-thumb,
+        input[type="range"]::-moz-range-thumb {
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background: #4CAF50;
+            border: 2px solid white;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h1>Price Range Slider</h1>
+            <h3>Minimum Price: <span class="min output"></span></h3>
+            <h3>Maximum Price: <span class="max output"></span></h3>
+            <div class="slider">
+                <input type="range" min="0" max="1000" value="0" class="slider min-slider">
+                <input type="range" min="0" max="1000" value="1000" class="slider max-slider">
+            </div>
+        </div>
+    </div>
+    <script>
+        const minvalue = document.querySelector('.min');
+        const maxvalue = document.querySelector('.max');
+        const minSlider = document.querySelector('.min-slider');
+        const maxSlider = document.querySelector('.max-slider');
+        minvalue.textContent = minSlider.value;
+        maxvalue.textContent = maxSlider.value;
+
+        minSlider.addEventListener('input', function () {
+            if (parseInt(minSlider.value) > parseInt(maxSlider.value)) {
+                minSlider.value = maxSlider.value;
+            }
+            minvalue.textContent = minSlider.value;
+        });
+
+        maxSlider.addEventListener('input', function () {
+            if (parseInt(maxSlider.value) < parseInt(minSlider.value)) {
+                maxSlider.value = minSlider.value;
+            }
+            maxvalue.textContent = maxSlider.value;
+        });
+    </script>
+</body>
+</html>

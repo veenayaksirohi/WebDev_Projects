@@ -1,0 +1,50 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Github Profile Searcher</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Intro Overlay -->
+    <div class="intro" id="introScreen">
+      <img src="./github-mark.svg" alt="GitHub Logo" class="intro-logo" />
+      <h1>Github Profile Searcher</h1>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+      <div class="content">
+        <h1>Github Profile Searcher</h1>
+        <div class="input">
+          <input
+            type="text"
+            id="username"
+            placeholder="Enter GitHub Username"
+          />
+          <button id="searchBtn">Search</button>
+        </div>
+        <div class="temp">
+          <div class="card">
+            <img src="" alt="" class="profile-img" />
+            <div class="info">
+              <p><strong>Name:</strong> <span id="name"></span></p>
+              <p><strong>Repositories:</strong> <span id="repos"></span></p>
+              <p><strong>Followers:</strong> <span id="followers"></span></p>
+              <p><strong>Following:</strong> <span id="following"></span></p>
+              <p><strong>Location:</strong> <span id="location"></span></p>
+              <p><strong>Twitter:</strong> <span id="twitter"></span></p>
+              <p><strong>Created:</strong> <span id="created"></span></p>
+              <p><strong>Updated:</strong> <span id="updated"></span></p>
+              <a id="profileLink" href="#" target="_blank">🌐 View Profile</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

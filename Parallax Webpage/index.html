@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Reset and box-sizing for all elements */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Parallax background section 1 */
+    .page1 {
+      background-image: url('https://images.unsplash.com/photo-1533371452382-d45a9da51ad9?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Text block on top of parallax background */
+    .page1 p {
+      position: relative;
+      background-color: beige;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      padding: 20px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    /* Section card styles for .s1, .s2, .s3, .s4 */
+    .s1,
+    .s2,
+    .s3,
+    .s4 {
+      background: rgba(255, 255, 255, 0.85); /* Glassmorphism effect */
+      border-radius: 18px;
+      box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+      padding: 32px 24px;
+      margin: 40px auto;
+      transition: box-shadow 0.2s, transform 0.2s;
+      width: 100%;
+      overflow: hidden;
+      height: 50vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* Make .s3 full viewport width */
+    .s3 {
+      width: 100vw;
+    }
+    /* Card hover effect for all sections */
+    .s1:hover,
+    .s2:hover,
+    .s3:hover,
+    .s4:hover {
+      box-shadow: 0 16px 48px 0 rgba(31, 38, 135, 0.22);
+      transform: translateY(-4px) scale(1.01);
+    }
+    /* Section heading styles */
+    .s1 h1,
+    .s2 h1,
+    .s3 h1,
+    .s4 h1 {
+      color: #222b45;
+      font-size: 2rem;
+      margin-bottom: 18px;
+      letter-spacing: 0.5px;
+    }
+    /* Parallax background section 2 */
+    .page2 {
+      background-image: url('https://images.unsplash.com/photo-1752328618244-506a57b78256?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDl8NnNNVmpUTFNrZVF8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Text block on top of parallax background 2 */
+    .page2 p {
+      position: relative;
+      background-color: beige;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      padding: 20px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    /* Parallax background section 3 */
+    .page3 {
+      background-image: url('https://images.unsplash.com/photo-1750711642160-efc6e052751a?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDM0fDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Text block on top of parallax background 3 */
+    .page3 p {
+      position: relative;
+      background-color: beige;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      padding: 20px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    /* Parallax background section 4 */
+    .page4 {
+      background-image: url('https://images.unsplash.com/photo-1750268187683-06de0976a77f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDMzfDZzTVZqVExTa2VRfHxlbnwwfHx8fHw%3D');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+    /* Text block on top of parallax background 4 */
+    .page4 p {
+      position: relative;
+      background-color: beige;
+      height: 20vh;
+      display: flex;
+      align-items: center;
+      text-align: justify;
+      padding: 20px;
+      overflow: hidden;
+      z-index: 2;
+    }
+    /* Blur overlay for parallax backgrounds */
+    .blur::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(2px);
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Parallax background section 1 with blur overlay -->
+    <div class="page1 blur">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti minus placeat ut iste obcaecati, ipsa, dolor ex ad et quo omnis blanditiis accusamus quae suscipit cupiditate harum vitae consequatur error. Autem vitae mollitia cum animi fugiat rem nostrum eligendi labore? ipsum dolor sit amet consectetur adipisicing elit. Dolorem ullam quam consectetur impedit doloremque autem quod minima aliquam commodi architecto?</p>
+    </div>
+    <!-- Section card 1 -->
+    <section class="s1">
+      <h1>Section One</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nostrum dolorem dolor dignissimos et incidunt assumenda beatae obcaecati aspernatur alias temporibus, odit eius enim corrupti tempore saepe aliquam quia? Repellendus odio voluptates dicta? Accusantium deserunt tempora ut tempore aliquid, pariatur iusto vel quam odio at, dolores sequi ipsam ullam voluptas, rem mollitia sed nulla doloribus? Quae, unde explicabo? Omnis distinctio provident, voluptate eum voluptas molestiae magnam quia necessitatibus, molestias ipsum numquam voluptatum earum ex doloribus ratione mollitia quaerat id sapiente dolorem dolorum! Accusamus ut eligendi minus aut! Veniam aperiam assumenda libero odit earum voluptas cum perspiciatis numquam optio, accusamus voluptatem perferendis. Officia illo impedit fuga velit ab voluptates nemo esse dolores placeat ut voluptatibus maxime fugit et tenetur, quis eveniet, officiis similique dolore. Magni, expedita! Laborum pariatur doloremque dolorem nisi iste aperiam fuga odit sed voluptate excepturi repellendus quae veniam sequi, esse rerum voluptatum alias. Molestias cupiditate accusantium esse, placeat sequi perspiciatis, mollitia quod sint debitis iste culpa sed recusandae? Quas consectetur dolorem aliquid voluptate praesentium molestiae totam obcaecati. Minus architecto, vitae, dicta iusto totam corrupti non excepturi quidem eius esse ipsam odit itaque ad necessitatibus aliquam eaque quisquam incidunt quasi sit ullam tempora magnam soluta. Sequi debitis earum minima reprehenderit.</p>
+    </section>
+    <!-- Parallax background section 2 with blur overlay -->
+    <div class="page2 blur">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque.</p>
+    </div>
+    <!-- Section card 2 -->
+    <section class="s2">
+      <h1>Section Two</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corrupti modi aliquid molestias saepe aspernatur magnam cumque maiores autem obcaecati mollitia qui et, possimus dolorem repudiandae expedita labore. Fugiat a aliquid, ad consectetur, veritatis dolores inventore totam ipsa, explicabo voluptatum ea enim qui eum eius! Veritatis neque ipsam incidunt totam consequatur, quis illo in laudantium blanditiis iure et ex excepturi sunt rerum sint doloribus reiciendis aliquid alias inventore. Beatae, voluptatum commodi quisquam recusandae quod quaerat doloribus maxime, maiores velit ab aspernatur obcaecati sed optio vel animi dolorum numquam quibusdam nobis nulla omnis a, veritatis exercitationem laboriosam consequatur? Placeat iure natus mollitia voluptatum aspernatur neque repudiandae minus dolorum similique non quasi ad optio tempore aliquid rerum enim dolorem debitis nemo quos quas, eum recusandae iusto. Quos expedita eligendi aut enim blanditiis fugit soluta cumque cum, itaque molestiae quaerat eum tenetur fuga repellendus ut natus corrupti esse excepturi alias illum. Numquam, nobis, atque qui iure exercitationem pariatur, impedit saepe incidunt iste maxime commodi quos tempora ipsam tenetur nemo? Minima optio libero eaque suscipit ratione vel exercitationem, adipisci tempora distinctio eos officiis recusandae quo praesentium quam consequatur labore soluta eligendi alias repellendus nemo quisquam deserunt expedita et. Quas cumque rem, alias sint officia modi?</p>
+    </section>
+    <!-- Parallax background section 3 with blur overlay -->
+    <div class="page3 blur">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque.</p>
+    </div>
+    <!-- Section card 3 -->
+    <section class="s3">
+      <h1>Section Three</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet placeat, iure tempora quo quis veniam molestiae dolore ratione facilis architecto, quod officiis. Optio aliquam aspernatur distinctio dolore. Iusto debitis quibusdam iure veritatis nulla blanditiis laudantium ratione fugit quia doloremque dolore hic exercitationem explicabo ad, dolorum distinctio quae! Illo a modi totam saepe deserunt ipsa, aspernatur, facilis omnis sunt iste optio at soluta aliquam dolore accusamus voluptatibus qui possimus, eligendi quisquam nemo voluptate quos quas ducimus? Ratione delectus expedita nesciunt quasi iusto nulla officiis quisquam vitae eveniet quam, ad cupiditate perspiciatis aperiam mollitia officia pariatur nemo amet assumenda? Omnis atque ratione odio nisi officia. Quaerat corrupti praesentium natus sit tempore sunt mollitia accusamus libero architecto in deleniti, quod consectetur aut ad? Omnis praesentium obcaecati eum, explicabo similique tempore sunt labore odit. Laboriosam quae rerum laudantium obcaecati perferendis omnis doloribus ad labore esse beatae id, quod deserunt dicta est eveniet maiores consectetur ipsum aperiam dignissimos quam voluptates minima nihil. Reiciendis labore sed harum magni debitis minima quibusdam accusamus ullam distinctio. Tempore earum excepturi reprehenderit molestias sed atque aliquid labore rem, commodi sequi vitae, corporis blanditiis saepe dolor quia officia vero dicta molestiae eligendi repudiandae facere? Qui iure impedit vitae commodi natus nisi?</p>
+    </section>
+    <!-- Parallax background section 4 with blur overlay -->
+    <div class="page4 blur">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque.</p>
+    </div>
+    <!-- Section card 4 -->
+    <section class="s4">
+      <h1>Section Four</h1>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Alias aperiam doloribus quos debitis. Ut ea eos magnam blanditiis ipsum explicabo debitis recusandae rerum corporis, iure inventore sint dolor reiciendis quos esse nesciunt est laboriosam molestiae aliquid. Magnam ipsum cumque tempora veritatis vitae ipsa minima ab nostrum voluptates praesentium aliquid, aut accusantium ipsam dolores quis laborum quaerat nihil id! Quos vel, aperiam id placeat eum veniam nemo amet recusandae minus doloribus eveniet enim reiciendis obcaecati velit pariatur quam nobis quia rem, necessitatibus ut provident. Provident molestias doloribus magni laboriosam veritatis laudantium veniam blanditiis aliquid ratione minima corrupti nam sequi saepe unde libero, dolorum debitis voluptas dolore? Enim nesciunt qui facere inventore delectus, ipsum deleniti. Odio soluta suscipit non totam, consequatur ea corrupti explicabo eligendi voluptas qui quo ab magnam placeat, aliquam laboriosam dignissimos quae neque eaque. Consequuntur, vitae deserunt! Enim id iste soluta rerum quisquam quae quis illum sapiente temporibus? Ullam earum aut iusto laudantium quas aspernatur et eveniet, sapiente esse mollitia, excepturi hic nisi? Unde nobis reiciendis quo laboriosam, placeat quia eos quos nesciunt, velit nulla a sequi soluta voluptate inventore qui! Dignissimos incidunt nisi voluptatibus facere illo nulla consectetur ut odio unde quis reprehenderit corporis, possimus dolorem, voluptate atque. ipsum dolor sit amet consectetur adipisicing elit. Doloribus, cumque. Quisquam, voluptatum. Quod, cumque. Doloribus, cumque.</p>
+    </section>
+  </div>
+</body>
+</html>
