@@ -32,7 +32,7 @@ A modern, responsive currency converter built with React and Vite. Convert betwe
 
 ```bash
 git clone <repository-url>
-cd 06currencyconverter
+cd currencyConverter
 ```
 
 2. Install dependencies:
@@ -59,15 +59,38 @@ npm run dev
 ## Project Structure
 
 ```
-src/
-├── components/
-│   └── Box.jsx          # Currency input/output component
-├── hooks/
-│   └── useCurrencyInfo.js # Custom hooks for API calls
-├── App.jsx              # Main application component
-├── main.jsx             # Application entry point
-└── index.css            # Global styles
+currencyConverter/
+├── public/
+│   └── vite.svg         # Vite logo
+├── src/
+│   ├── assets/
+│   │   └── react.svg    # React logo
+│   ├── components/
+│   │   └── Box.jsx      # Currency input/output component
+│   ├── hooks/
+│   │   └── useCurrencyInfo.js # Custom hooks for API calls
+│   ├── App.jsx          # Main application component
+│   ├── main.jsx         # Application entry point
+│   └── index.css        # Global styles
+├── index.html           # HTML template
+├── package.json         # Project dependencies and scripts
+├── vite.config.js       # Vite configuration
+└── eslint.config.js     # ESLint configuration
 ```
+
+## Custom Hooks
+
+The app includes two custom hooks in `src/hooks/useCurrencyInfo.js`:
+
+### `useCurrencyInfo(fromcurrency, tocurrency, amount)`
+- Fetches the exchange rate between two specific currencies
+- Returns the conversion rate for the specified currency pair
+- Automatically updates when currency parameters change
+
+### `useAllCurrency(fromcurrency)`
+- Fetches all available currencies for a given base currency
+- Returns an array of currency codes that can be converted to
+- Useful for populating currency selection dropdowns
 
 ## API
 
@@ -77,6 +100,11 @@ This app uses the [@fawazahmed0/currency-api](https://github.com/fawazahmed0/cur
 - Historical data support
 - Free usage with no API key required
 - CDN-delivered for fast response times
+
+**API Endpoint Used:**
+```
+https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/{currency}.json
+```
 
 ## Contributing
 

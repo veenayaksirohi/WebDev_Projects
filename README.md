@@ -5,19 +5,24 @@ This repository contains a collection of various web development projects showca
 ## Projects Overview
 
 ### 1. Blogs Website
+
 **Location:** `Blogs Website/`
+
 - **Files:** `index.html`
 - **Description:** A blog website implementation
 - **Technologies:** HTML
 
 ### 2. Dummy Data Generator
+
 **Location:** `Dummy Data Generator/`
+
 - **Files:** `index.js`, `dummy.js`, `package.json`, `package-lock.json`
 - **Description:** A Node.js application that generates dummy employee data using MongoDB and Mongoose
 - **Technologies:** Node.js, Express.js v5.1.0, MongoDB, Mongoose v8.16.5
 - **Module Type:** ES6 Modules (type: "module" in package.json)
 
 **Features:**
+
 - **Robust Database Connection:** Async MongoDB connection with comprehensive error handling and process exit on failure
 - **Employee Data Schema:** Structured schema for employee information with validation
 - **Random Data Generation:** Utility functions for generating random numbers within specified ranges
@@ -26,69 +31,86 @@ This repository contains a collection of various web development projects showca
 **Technical Implementation:**
 
 **Database Schema (dummy.js):**
+
 ```javascript
 const dummySchema = new mongoose.Schema({
   name: { type: String, required: true, trim: true },
   salary: { type: Number },
   language: { type: String },
   city: { type: String },
-  isManager: { type: Boolean }
+  isManager: { type: Boolean },
 });
 ```
 
 **Connection Handler (index.js):**
+
 - Implements async/await pattern for database connection
 - Includes try-catch error handling with descriptive console messages
 - Uses `process.exit(1)` for graceful application termination on connection failure
 - Success/error indicators with emoji for better UX
 
 **Utility Functions:**
+
 - `getRandomInt(min, max)`: Generates random integers within specified range using `Math.floor(Math.random())`
 - Supports data seeding and testing scenarios
 
 **Dependencies:**
+
 - Express.js v5.1.0 for web server functionality
 - Mongoose v8.16.5 for MongoDB object modeling
 
 ### 3. Event Webpage
+
 **Location:** `Event_webpage/`
+
 - **Files:** `index.html`
 - **Description:** An event-focused webpage
 - **Technologies:** HTML
 
 ### 4. Exercise5 Code with Harry
+
 **Location:** `Exercise5_code_with_harry/`
+
 - **Files:** `index.html`
 - **Description:** Programming exercise implementation
 - **Technologies:** HTML
 
 ### 5. GitHub Profile Searcher
+
 **Location:** `GitHub Profile Searcher/`
+
 - **Files:** `index.html`, `script.js`, `styles.css`, `github-mark.svg`
 - **Description:** A web application to search and display GitHub profiles
 - **Technologies:** HTML, CSS, JavaScript
 - **Features:** GitHub API integration with custom styling and GitHub branding
 
 ### 6. Hacker's Terminal Sigma Web
+
 **Location:** `Hacker's Terminal Sigma Web/`
+
 - **Files:** `index.html`
 - **Description:** A terminal-themed web interface
 - **Technologies:** HTML
 
 ### 7. Lorem Ipsum Generator
+
 **Location:** `Lorem Ipsum Generator/`
+
 - **Files:** `index.html`, `script.js`, `style.css`, `package.json`, `package-lock.json`
 - **Description:** A Lorem Ipsum text generator application
 - **Technologies:** HTML, CSS, JavaScript, Node.js
 - **Features:** Dynamic text generation with custom styling
 
 ### 8. Multi Step Progress Bar
+
 **Location:** `Multi Step Progress Bar/`
+
 - **Files:** `index.html`, `script.js`, `style.css`
 - **Description:** An interactive multi-step progress bar component
 - **Technologies:** HTML, CSS, JavaScript
 
 **Key Features:**
+
 - **Progress Tracking:** Visual progress bar that updates based on current step
 - **Step Navigation:** Next/Previous buttons for step control
 - **Dynamic Content:** Shows/hides content based on current step
@@ -96,13 +118,16 @@ const dummySchema = new mongoose.Schema({
 - **Interactive Elements:** Click handlers for navigation buttons
 
 **Implementation Details:**
+
 - Progress calculation: `(currentstep / (steps.length - 1)) * 100`
 - Color-coded step indicators (grey default, dark green for completed)
 - Content visibility management for each step
 - Boundary checking to prevent navigation beyond valid steps
 
 ### 9. Netflix Clone
+
 **Location:** `Netflix_Clone/`
+
 - **Files:** `index.html`, `style.css`, `faq-accordion.js`, `simple-language-picker.js`, `updated_resume.tex`
 - **Description:** A Netflix homepage clone with interactive features
 - **Technologies:** HTML, CSS, JavaScript
@@ -112,27 +137,103 @@ const dummySchema = new mongoose.Schema({
   - Responsive design mimicking Netflix's interface
 
 ### 10. Parallax Webpage
+
 **Location:** `Parallax Webpage/`
+
 - **Files:** `index.html`
 - **Description:** A webpage demonstrating parallax scrolling effects
 - **Technologies:** HTML, CSS
 
 ### 11. Portfolio Gallery
+
 **Location:** `Portfolio Gallery/`
+
 - **Files:** `index.html`
 - **Description:** A portfolio gallery showcase
 - **Technologies:** HTML
 
 ### 12. Price Range Slider
+
 **Location:** `Price Range Slider/`
+
 - **Files:** `index.html`
 - **Description:** An interactive price range slider component
 - **Technologies:** HTML, CSS, JavaScript
 
+### 13. Currency Converter
+
+**Location:** `currencyConverter/`
+
+- **Files:** `index.html`, `package.json`, `vite.config.js`, `eslint.config.js`, `src/App.jsx`, `src/main.jsx`, `src/index.css`, `src/components/Box.jsx`, `src/hooks/useCurrencyInfo.js`
+- **Description:** A modern, responsive currency converter built with React and Vite
+- **Technologies:** React 19, Vite, Tailwind CSS 4, ESLint
+
+**Key Features:**
+
+- **Real-time Exchange Rates:** Fetches live currency data from a reliable API
+- **Bidirectional Conversion:** Convert from any currency to any other currency
+- **Swap Functionality:** Quickly swap between "from" and "to" currencies
+- **Responsive Design:** Beautiful UI with Tailwind CSS and backdrop blur effects
+- **Auto-calculation:** Automatically updates conversion as you type
+- **Currency Search:** Easy currency selection with searchable dropdown
+
+**Custom Hooks:**
+
+- `useCurrencyInfo(fromcurrency, tocurrency, amount)` - Fetches exchange rates between specific currencies
+- `useAllCurrency(fromcurrency)` - Fetches all available currencies for dropdown population
+
+**API Integration:**
+
+- Uses [@fawazahmed0/currency-api](https://github.com/fawazahmed0/currency-api) for real-time exchange rates
+- CDN-delivered API with 150+ currencies support
+- No API key required
+
+### 14. Language Switcher App
+
+**Location:** `Language Switcher App/`
+
+- **Files:** `package.json`, `vite.config.js`, `eslint.config.js`, `src/App.jsx`, `src/main.jsx`, `src/index.css`, `src/components/`, `src/context/`
+- **Description:** A React application demonstrating internationalization with dynamic language switching
+- **Technologies:** React, Vite, Chakra UI, Tailwind CSS, React Icons
+
+**Key Features:**
+
+- **Dynamic Language Switching:** Switch between English and French in real-time
+- **Context API Integration:** Uses React Context for state management across components
+- **Modern UI Components:** Built with Chakra UI for professional interface design
+- **Responsive Design:** Tailwind CSS for responsive styling
+- **Icon Integration:** React Icons for enhanced visual elements
+
+**Technical Implementation:**
+
+- **Context Provider:** `LangContext` for global language state management
+- **Language Selector:** Dropdown menu with globe icon for language selection
+- **Greeting Component:** Dynamic greeting display based on selected language
+- **Component Structure:** Modular architecture with separate components and context
+
+**Components:**
+
+- `LanguageSelector.jsx` - Interactive dropdown for language selection
+- `Greeting.jsx` - Dynamic greeting display component
+- `LangContext.js` - React Context for language state management
+
+### 15. Blogs Website (Alternative)
+
+**Location:** `blogs-website/`
+
+- **Files:** `index.html`
+- **Description:** An alternative blog website implementation
+- **Technologies:** HTML
+
 ## Technologies Used
 
-- **Frontend:** HTML5, CSS3, JavaScript (ES6+)
+- **Frontend:** HTML5, CSS3, JavaScript (ES6+), React 19
+- **Build Tools:** Vite, ESLint
+- **Styling:** Tailwind CSS 4, Chakra UI, Emotion
+- **State Management:** React Context API, React Hooks
+- **Icons:** React Icons
 - **Backend:** Node.js, Express.js
 - **Database:** MongoDB with Mongoose ODM
+- **APIs:** External REST APIs (Currency API, GitHub API)
 - **Package Management:** npm
-- **Version Control:** Git (implied by .vscode folders)
+- **Version Control:** Git
